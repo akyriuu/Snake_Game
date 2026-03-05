@@ -1,0 +1,41 @@
+body {
+  background-color: rgb(10, 10, 26);
+}
+
+#gameContainer {
+  text-align: center;
+}
+
+#gameBoard {
+  border: 5px solid;
+  border-radius: 3px;
+  border-color: rgba(0, 175, 73, 0.901);
+  background-color: rgb(141, 138, 138);
+}
+
+#scoreBoard {
+  font-family: "Inter", sans-serif;
+  font-size: 100px;
+  font-weight: 400;
+  color: white;
+}
+
+#resetButton {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: rgb(113, 216, 113);
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+#resetButton:hover {
+  padding: 15px;
+}
+#resetButton:active {
+  padding: 15px;
+  color: white;
+  background-color: rgb(63, 75, 75);
+}
