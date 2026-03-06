@@ -6,4 +6,16 @@ Use the arrow keys to move, and have fun!
 
 This game was built as a practice project to improve myself, posing to be a fun and rewarding challenge, as most of the concepts used in the game were new to me at the time. I hope you like it and I accept any suggestions on this project, as I'm searching for practices exercises!
 
+Technologies:
+- HTML
+- CSS
+- JavaScript
+
+Features:
+- Snake movement
+- Random food
+- Collision detection
+- Score system
+
+
 
