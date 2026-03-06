@@ -3,14 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="snake.css" />
+    <link rel="stylesheet" href="snakeMobile.css" />
     <title>Snake!</title>
   </head>
   <body>
     <div id="gameContainer">
       <canvas id="gameBoard" width="400" height="400"></canvas>
-      <div id="scoreBoard">0</div>
-      <button id="resetButton">Restart?</button>
+      <div id="scoreRow">
+        <div id="scoreBoard">0</div>
+        <button id="resetButton">Restart?</button>
+      </div>
+    </div>
+    <div id="mobileControls">
+      <button class="dir-btn" data-dir="up">UP</button>
+      <div class="middle-row">
+        <button class="dir-btn" data-dir="left">LEFT</button>
+        <button class="dir-btn" data-dir="right">RIGHT</button>
+      </div>
+      <button class="dir-btn" data-dir="down">DOWN</button>
     </div>
     <script src="snake.js"></script>
   </body>

@@ -26,6 +26,39 @@ let snake = [
 window.addEventListener("keydown", changeDirection);
 resetButton.addEventListener("click", resetGame);
 
+const dirButtons = document.querySelectorAll(".dir-btn");
+dirButtons.forEach((btn) => {
+  btn.addEventListener("click", () => setDirection(btn.dataset.dir));
+  btn.addEventListener(
+    "touchstart",
+    (e) => {
+      e.preventDefault();
+      setDirection(btn.dataset.dir);
+    },
+    { passive: false },
+  );
+});
+function setDirection(direction) {
+  const goingUp = yVelocity === -unitSize;
+  const goingDown = yVelocity === unitSize;
+  const goingRight = xVelocity === unitSize;
+  const goingLeft = xVelocity === -unitSize;
+
+  if (direction === "left" && !goingRight) {
+    xVelocity = -unitSize;
+    yVelocity = 0;
+  } else if (direction === "up" && !goingDown) {
+    xVelocity = 0;
+    yVelocity = -unitSize;
+  } else if (direction === "right" && !goingLeft) {
+    xVelocity = unitSize;
+    yVelocity = 0;
+  } else if (direction === "down" && !goingUp) {
+    xVelocity = 0;
+    yVelocity = unitSize;
+  }
+}
+
 gameStart();
 
 function gameStart() {
@@ -90,36 +123,12 @@ function drawSnake() {
 
 function changeDirection(event) {
   const keyPressed = event.keyCode;
-  const LEFT = 37;
-  const UP = 38;
-  const RIGHT = 39;
-  const DOWN = 40;
-
-  const goingUp = yVelocity === -unitSize;
-  const goingDown = yVelocity === unitSize;
-  const goingRight = xVelocity === unitSize;
-  const goingLeft = xVelocity === -unitSize;
-
-  switch (true) {
-    case keyPressed === LEFT && !goingRight:
-      xVelocity = -unitSize;
-      yVelocity = 0;
-      break;
-    case keyPressed === UP && !goingDown:
-      xVelocity = 0;
-      yVelocity = -unitSize;
-      break;
-
-    case keyPressed === RIGHT && !goingLeft:
-      xVelocity = unitSize;
-      yVelocity = 0;
-      break;
-    case keyPressed === DOWN && !goingUp:
-      xVelocity = 0;
-      yVelocity = unitSize;
-      break;
-  }
+  if (keyPressed === 37) setDirection("left");
+  else if (keyPressed === 38) setDirection("up");
+  else if (keyPressed === 39) setDirection("right");
+  else if (keyPressed === 40) setDirection("down");
 }
+
 function checkGameOver() {
   switch (true) {
     case snake[0].x < 0:
@@ -152,6 +161,7 @@ function resetGame() {
     { x: unitSize * 4, y: 0 },
     { x: unitSize * 3, y: 0 },
     { x: unitSize * 2, y: 0 },
+    { x: unitSize, y: 0 },
     { x: 0, y: 0 },
   ];
 
