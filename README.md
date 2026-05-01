@@ -9,7 +9,8 @@ This game was built as a practice project to improve myself, posing to be a fun 
 
 
 
-<img width="548" height="600" alt="giftogit" src="https://github.com/user-attachments/assets/525405bf-d955-4588-b705-27a96ae71c4a" />
+<img width="656" height="480" alt="ezgif-1c33821cda9f3432" src="https://github.com/user-attachments/assets/a1ff7c31-347f-44c8-99a2-11cdf53f41fa" />
+
 
 Technologies:
 - HTML
